@@ -1,5 +1,5 @@
 {
-  "name": "Mango",
+  "name": "mango_js",
   "description": "Mango.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB's Native driver",
   "keywords": [
     "mango",
