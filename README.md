@@ -6,9 +6,10 @@ Mango.js is a simple module to make MongoDB syntax CRUD. It uses and exposes con
 
 ## Install
 
-Its not registered yet :(
-
-but you can still install by installing locally
+```shell
+npm install mango_js
+```
+you can install it locally for development by doing this
 
 ```shell
 git clone https://github.com/jacoblwe20/mango_js.git
