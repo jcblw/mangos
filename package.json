@@ -1,25 +1,26 @@
 {
-	"name": "Mango.js",
-	"description": "Mango.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB's Native driver",
-	"keywords": [
-		"mango",
-		"mongodb",
-		"mongo",
-		"CRUD"
-	],
-	"version": "0.0.1",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/jacoblwe20/mango_js.git"
-	},
-	"author": "Jacob Lowe (https://github.com/jacoblwe20)",
-	"main": "./Mango.js",
-	"dependencies": {
-		"mongodb": "1.2.7"
-	},
-	"licenses": [
-		{
-			"type": "MIT"
-		}
-	]
+  "name": "Mango.js",
+  "description": "Mango.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB's Native driver",
+  "keywords": [
+    "mango",
+    "mongodb",
+    "mongo",
+    "CRUD"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacoblwe20/mango_js.git"
+  },
+  "author": "Jacob Lowe (https://github.com/jacoblwe20)",
+  "main": "./Mango.js",
+  "dependencies": {
+    "mongodb": "1.2.7"
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "5cbea82045db5cfcd518eb6a15e9d782d8a8eb23",
+  "scripts": {
+    "test": ""
+  },
+  "license": "BSD"
 }
