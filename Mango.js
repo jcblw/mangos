@@ -83,7 +83,7 @@ var Mango = function(database, host, port) {
    * @Param   callback  Function  - Function to pass data to
    */
   that.create = function(dataset, callback){
-    that.getCollection(function(error,collection) {
+    that.getCollection(function(error, collection) {
       if( error ) callback(error)
       else {
         if(typeof dataset.length === "undefined")
@@ -94,8 +94,9 @@ var Mango = function(database, host, port) {
           data.created_at = new Date();
         }
 
-        collection.insert(dataset, function() {
-          callback(null, dataset);
+        collection.insert(dataset, {safe: true}, function(err, results) {
+          if(err) that.error(err, callback)
+          else callback(null, results);
         });
       }
     });
