@@ -84,7 +84,7 @@ var Mango = function(database, host, port) {
    */
   that.create = function(dataset, callback){
     that.getCollection(function(error, collection) {
-      if( error ) callback(error)
+      if(error) that.error(error, callback)
       else {
         if(typeof dataset.length === "undefined")
           dataset = [dataset];
@@ -96,7 +96,7 @@ var Mango = function(database, host, port) {
 
         collection.insert(dataset, {safe: true}, function(err, results) {
           if(err) that.error(err, callback)
-          else callback(null, results);
+          else callback(null, results)
         });
       }
     });
