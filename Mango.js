@@ -16,8 +16,26 @@ var Mongo   = require('mongodb'),
 var Mango = function(database, host, port) {
   var that = this;
   // Create a database object
-  that.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
-  that.db.open(function(){});
+  if(typeof port === 'number'){
+    console.log('using db');
+    that.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
+    that.db.open(function(){});
+  }else{
+    console.log('using connection');
+    new Mongo.connection(datatbase, {}, that.connectCB);
+  }
+  /* @Basic-Utility
+   * @Method    connectCB - function that handles connections using mongo uris
+   * @Param     error - Error passed to this function via mongoddb native 
+   * @Param     database - the database object to query
+   */
+
+  that.connectCB = function(error, database){
+    if(err) that.error(err, function(){})
+    else{
+      that.db = database;
+    }
+  }
   /* @Basic-Utility
    * @Method    error - Function that spits out error to console and callback (Keeps functions clean)
    * @Param     err       Object    - The error spit out be MongoDB native
