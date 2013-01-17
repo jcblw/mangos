@@ -17,11 +17,9 @@ var Mango = function(database, host, port) {
   var that = this;
   // Create a database object
   if(typeof port === 'number'){
-    console.log('using db');
     that.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
     that.db.open(function(){});
   }else{
-    console.log('using connection');
     new Mongo.connection(datatbase, {}, that.connectCB);
   }
   /* @Basic-Utility
