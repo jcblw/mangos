@@ -1,7 +1,8 @@
 var Mongo   = require('mongodb'),
     Client  = Mongo.MongoClient,
     Db      = Mongo.Db,
-    Server  = Mongo.Server;
+    Server  = Mongo.Server,
+    url     = require('url');
 
 /* Mangos.js
  * ==========================
@@ -13,7 +14,6 @@ var Mongo   = require('mongodb'),
  * @Param       host      String  - Location of MongoDB Server
  * @Param       port      Number  - The port that the server is running at
  */
-
 var Mango = function(database, host, port) {
 
   var that = this;
@@ -168,6 +168,8 @@ var Mango = function(database, host, port) {
     that.db.open(function(){});
   }else{
     Client.connect(database, {}, that.connectCB);
+    this.uri = function(d){return d}(database)
+    database = url.parse(database).pathname.replace(/^\//, '')
   }
 };
 module.exports = Mango;
