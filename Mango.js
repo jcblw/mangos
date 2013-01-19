@@ -1,4 +1,5 @@
 var Mongo   = require('mongodb'),
+    Client  = Mongo.MongoClient,
     Db      = Mongo.Db,
     Server  = Mongo.Server;
 
@@ -14,28 +15,19 @@ var Mongo   = require('mongodb'),
  */
 
 var Mango = function(database, host, port) {
+
   var that = this;
-  console.log(datatbase);
-  // Create a database object
-  if(port){
-    that.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
-    that.db.open(function(){});
-  }else{
-    console.log('using connection');
-    new Mongo.connection(datatbase, {}, that.connectCB);
-  }
   /* @Basic-Utility
    * @Method    connectCB - function that handles connections using mongo uris
    * @Param     error - Error passed to this function via mongoddb native 
    * @Param     database - the database object to query
    */
-
-  that.connectCB = function(error, database){
+  that.connectCB = function(err, database){
     if(err) that.error(err, function(){})
     else{
       that.db = database;
     }
-  }
+  };
   /* @Basic-Utility
    * @Method    error - Function that spits out error to console and callback (Keeps functions clean)
    * @Param     err       Object    - The error spit out be MongoDB native
@@ -170,7 +162,12 @@ var Mango = function(database, host, port) {
       }
     });
   };
-
+  // Create a database object
+  if(port){
+    that.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
+    that.db.open(function(){});
+  }else{
+    Client.connect(database, {}, that.connectCB);
+  }
 };
-
-exports.Mango = Mango; 
+module.exports = Mango;
