@@ -21,12 +21,13 @@ then in your code
 
 ```javascript
 // to include
-var Mango = require('Mango').Mango;
+var Mango = require('Mango');
 //to use
-var userSet = Mango('users', 'localhost', 27017);
+var userSet = new Mango('users', 'localhost', 27017);
 // Dont do this the code is not synchronous
 userSet.create({name : 'Jacob'}, function(err, user){
   // if no error user is created
+  console.log(user._id);
 });
 
 userSet.read({name : 'Jacob'},function(err, users){
@@ -41,5 +42,16 @@ userSet.delete('50e3bdb52fc1c5d15a000001', function(err, user){
   // if no error user is deleted
 });
 
+```
+
+Not enough control... well you can still use the native driver
+
+```javascript
+userSet.db.open()
+// Mongo Db Native Driver Object
+userSet.db.collectionNames(function(err, names){
+	console.log(names);
+});
+userSet.db.close()
 ```
 
