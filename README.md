@@ -1,5 +1,7 @@
 ## Mango.js
 
+#### mango_js is now mangos
+
 Mango.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB's Native driver
 
 #### Documentation in the code!
@@ -7,7 +9,7 @@ Mango.js is a simple module to make MongoDB syntax CRUD. It uses and exposes con
 ## Install
 
 ```shell
-npm install mango_js
+npm install mangos
 ```
 you can install it locally for development by doing this
 
@@ -21,9 +23,9 @@ then in your code
 
 ```javascript
 // to include
-var Mango = require('Mango');
+var Mangos = require('mangos');
 //to use
-var userSet = new Mango('users', 'localhost', 27017);
+var userSet = new Mangos('users', 'localhost', 27017);
 // Dont do this the code is not synchronous
 userSet.create({name : 'Jacob'}, function(err, user){
   // if no error user is created
