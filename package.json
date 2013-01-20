@@ -7,7 +7,7 @@
     "mongo",
     "CRUD"
   ],
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/jacoblwe20/mango_js.git"
