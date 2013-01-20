@@ -26,6 +26,7 @@ var Mango = function(database, host, port) {
     if(err) that.error(err, function(){})
     else{
       that.db = database;
+      that.ready = true
     }
   };
   /* @Basic-Utility
@@ -51,10 +52,16 @@ var Mango = function(database, host, port) {
    * @Param     callback      Function  - Function to pass data to
    */
   that.getCollection = function(callback){
-    that.db.collection(database, function(err, collection){
-      if(err) that.error(err, callback);
-      else callback(null, collection);
-    });
+    if(that.ready){
+      that.db.collection(database, function(err, collection){
+        if(err) that.error(err, callback);
+        else callback(null, collection);
+      });
+    }else{
+      setTimeout(function(){
+        that.getCollection(callback);
+      }, 500);
+    }
   };
   /* @Read-Utility
    * @Method    all - Get all results
@@ -165,7 +172,9 @@ var Mango = function(database, host, port) {
   // Create a database object
   if(port){
     that.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
-    that.db.open(function(){});
+    that.db.open(function(){
+      that.ready = true
+    });
   }else{
     Client.connect(database, {}, that.connectCB);
     this.uri = function(d){return d}(database)
