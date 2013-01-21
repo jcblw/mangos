@@ -63,6 +63,22 @@ var Mango = function(database, host, port) {
       }, 500);
     }
   };
+  /* @Basic-Utility
+   * @Method   index - add an index to collection
+   * @Param    index    Object  - Holds the key to index
+   * @Param    callback Function - Function that will pass back data 
+   */
+   that.index = function(index, callback){
+    that.getCollection(function(err, collection){
+      if(err) that.error(err, callback)
+      else{
+        collection.ensureIndex(index, function(err, results){
+          if(err) that.error(err, callback);
+          else callback(null, results);
+        });
+      }
+    });
+   };
   /* @Read-Utility
    * @Method    all - Get all results
    * @Param     callback    Function  - Function to pass data to
