@@ -103,6 +103,7 @@ var Mango = function(database, host, port) {
     that.getCollection(function(err, collection){
       if(err) that.error(err, callback)
       else{
+        (filter.id) ? filter.id = that.hex(collection, filter.id) : null;
         collection.find(filter).toArray(function(error, results){
           if(err) that.error(err, callback)
           else callback(null, results)
@@ -162,7 +163,9 @@ var Mango = function(database, host, port) {
     this.getCollection(function(err, collection){
       if(err) that.error(err, callback)
       else{
-        collection.findAndModify({_id: that.hex(collection, dataset.id)}, [['_id', 'asc']], {$set: dataset}, {new:true}, function(err, results){
+        var id = that.hex(collection, dataset.id);
+        delete dataset.id;
+        collection.findAndModify({_id: id}, [['_id', 'asc']], {$set: dataset}, {new:true}, function(err, results){
           if(err) that.error(err, calback)
           else callback(null, results)
         })
