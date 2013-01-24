@@ -51,7 +51,7 @@ var Mango = function(database, host, port) {
    * @Method    getCollection - Get collection
    * @Param     callback      Function  - Function to pass data to
    */
-  that.getCollection = function(callback){
+  that.collection = function(callback){
     if(that.ready){
       that.db.collection(database, function(err, collection){
         if(err) that.error(err, callback);
@@ -69,7 +69,7 @@ var Mango = function(database, host, port) {
    * @Param    callback Function - Function that will pass back data 
    */
    that.index = function(index, callback){
-    that.getCollection(function(err, collection){
+    that.collection(function(err, collection){
       if(err) that.error(err, callback)
       else{
         collection.ensureIndex(index, function(err, results){
@@ -84,7 +84,7 @@ var Mango = function(database, host, port) {
    * @Param     callback    Function  - Function to pass data to
    */
   that.all = function(callback){
-    that.getCollection(function(err, collection){
+    that.collection(function(err, collection){
       if(err) that.error(err, callback)
       else{
         collection.find().toArray(function(err, results){
@@ -100,7 +100,7 @@ var Mango = function(database, host, port) {
    * @Param    callback     Function  - Function to pass data to
    */
   that.find = function(filter, callback){
-    that.getCollection(function(err, collection){
+    that.collection(function(err, collection){
       if(err) that.error(err, callback)
       else{
         if(filter.id) filter._id = that.hex(collection, filter.id);
@@ -118,7 +118,7 @@ var Mango = function(database, host, port) {
    * @Param   callback  Function  - Function to pass data to
    */
   that.create = function(dataset, callback){
-    that.getCollection(function(error, collection) {
+    that.collection(function(error, collection) {
       if(error) that.error(error, callback)
       else {
         if(typeof dataset.length === "undefined")
@@ -159,7 +159,7 @@ var Mango = function(database, host, port) {
    * @Param   callback  Function  - Function to pass data to
    */
   that.update = function(dataset, callback){
-    this.getCollection(function(err, collection){
+    that.collection(function(err, collection){
       if(err) that.error(err, callback)
       else{
         var id = that.hex(collection, dataset.id);
@@ -177,7 +177,7 @@ var Mango = function(database, host, port) {
    * @Param   callback  Function  - Function to pass data to
    */
   that.delete = function(id, callback){
-    that.getCollection(function(err, collection) {
+    that.collection(function(err, collection) {
       if(err) that.error(err, callback)
       else {
         collection.findAndRemove({_id: that.hex(collection, id)}, function(err, results) {
