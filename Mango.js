@@ -103,7 +103,8 @@ var Mango = function(database, host, port) {
     that.getCollection(function(err, collection){
       if(err) that.error(err, callback)
       else{
-        (filter.id) ? filter.id = that.hex(collection, filter.id) : null;
+        if(filter.id) filter._id = that.hex(collection, filter.id);
+        delete filter.id;
         collection.find(filter).toArray(function(error, results){
           if(err) that.error(err, callback)
           else callback(null, results)
@@ -122,12 +123,10 @@ var Mango = function(database, host, port) {
       else {
         if(typeof dataset.length === "undefined")
           dataset = [dataset];
-
         for( var i =0;i < dataset.length; i++ ) {
           data = dataset[i];
           data.created_at = new Date();
         }
-
         collection.insert(dataset, {safe: true}, function(err, results) {
           if(err) that.error(err, callback)
           else callback(null, results)
