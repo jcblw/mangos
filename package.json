@@ -10,7 +10,7 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jacoblwe20/mango_js.git"
+    "url": "https://github.com/jacoblwe20/mangos.git"
   },
   "author": "Jacob Lowe (https://github.com/jacoblwe20)",
   "main": "./Mango.js",
