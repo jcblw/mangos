@@ -194,9 +194,10 @@ var Mango = function(database, host, port) {
       that.ready = true
     });
   }else{
-    Client.connect(database, {}, that.connectCB);
+    var uri = (host) ? host : database;
+    Client.connect(uri, {}, that.connectCB);
     this.uri = function(d){return d}(database)
-    database = url.parse(database).pathname.replace(/^\//, '')
+    database = (host) ? database : url.parse(database).pathname.replace(/^\//, '')
   }
 };
 module.exports = Mango;
