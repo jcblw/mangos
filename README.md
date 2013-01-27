@@ -26,6 +26,8 @@ then in your code
 var Mangos = require('mangos');
 //to use
 var userSet = new Mangos('users', 'localhost', 27017);
+// or with a mongo uri
+var locations = new Mangos('locations', 'mongodb://admin:supersecret@cooldbs.io/yourdb');
 // Dont do this the code is not synchronous
 userSet.create({name : 'Jacob'}, function(err, user){
   // if no error user is created
