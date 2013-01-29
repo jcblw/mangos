@@ -125,7 +125,6 @@ var Mango = function(database, host, port) {
           dataset = [dataset];
         for( var i =0;i < dataset.length; i++ ) {
           data = dataset[i];
-          data.created_at = new Date();
         }
         collection.insert(dataset, {safe: true}, function(err, results) {
           if(err) that.error(err, callback)
