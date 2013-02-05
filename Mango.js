@@ -175,11 +175,13 @@ var Mango = function(database, host, port) {
    * @Param   id        String    - Id of specific entry
    * @Param   callback  Function  - Function to pass data to
    */
-  that.delete = function(id, callback){
+  that.delete = function(dataset, callback){
     that.collection(function(err, collection) {
       if(err) that.error(err, callback)
       else {
-        collection.findAndRemove({_id: that.hex(collection, id)}, function(err, results) {
+        dataset._id = that.hex(collection, dataset.id);
+        delete dataset.id;
+        collection.findAndRemove(dataset, function(err, results) {
           if(err) that.error(err, callback)
           else callback(null, results)
         });
