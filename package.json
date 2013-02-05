@@ -7,7 +7,7 @@
     "mongo",
     "CRUD"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/jacoblwe20/mangos.git"
@@ -15,7 +15,7 @@
   "author": "Jacob Lowe (https://github.com/jacoblwe20)",
   "main": "./Mango.js",
   "dependencies": {
-    "mongodb": "1.2.8"
+    "mongodb": "1.2.7"
   },
   "readmeFilename": "README.md",
   "gitHead": "5cbea82045db5cfcd518eb6a15e9d782d8a8eb23",
