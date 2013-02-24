@@ -1,0 +1,126 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.2.11
+3 info using node@v0.8.20
+4 verbose publish [ '.' ]
+5 verbose read json /home/jacob/mangos/package.json
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { pathname: '.', path: '.', href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/jacob/.npm/3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ '/home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+14 verbose folder .
+15 info prepublish mangos@0.1.2
+16 silly lockFile 3a52ce78- .
+17 verbose lock . /home/jacob/.npm/3a52ce78-.lock
+18 silly lockFile 5f65c767-04187-0-8518948818091303-tmp-tgz /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+19 verbose lock /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz /home/jacob/.npm/5f65c767-04187-0-8518948818091303-tmp-tgz.lock
+20 silly lockFile 3a52ce78- .
+21 silly lockFile 3a52ce78- .
+22 silly lockFile 5f65c767-04187-0-8518948818091303-tmp-tgz /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+23 silly lockFile 5f65c767-04187-0-8518948818091303-tmp-tgz /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+24 verbose tar unpack /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+25 silly lockFile 507ba7bf-04187-0-8518948818091303-package /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+26 verbose lock /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package /home/jacob/.npm/507ba7bf-04187-0-8518948818091303-package.lock
+27 silly lockFile 5f65c767-04187-0-8518948818091303-tmp-tgz /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+28 verbose lock /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz /home/jacob/.npm/5f65c767-04187-0-8518948818091303-tmp-tgz.lock
+29 silly gunzTarPerm modes [ '755', '644' ]
+30 silly gunzTarPerm extractEntry package.json
+31 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+32 silly gunzTarPerm extractEntry .npmignore
+33 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+34 silly gunzTarPerm extractEntry README.md
+35 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+36 silly gunzTarPerm extractEntry Mango.js
+37 silly gunzTarPerm modified mode [ 'Mango.js', 436, 420 ]
+38 verbose read json /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package/package.json
+39 silly lockFile 507ba7bf-04187-0-8518948818091303-package /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+40 silly lockFile 507ba7bf-04187-0-8518948818091303-package /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+41 silly lockFile 5f65c767-04187-0-8518948818091303-tmp-tgz /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+42 silly lockFile 5f65c767-04187-0-8518948818091303-tmp-tgz /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/tmp.tgz
+43 verbose from cache /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package/package.json
+44 verbose tar pack [ '/home/jacob/.npm/mangos/0.1.2/package.tgz',
+44 verbose tar pack   '/home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package' ]
+45 verbose tarball /home/jacob/.npm/mangos/0.1.2/package.tgz
+46 verbose folder /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+47 silly lockFile 507ba7bf-04187-0-8518948818091303-package /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+48 verbose lock /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package /home/jacob/.npm/507ba7bf-04187-0-8518948818091303-package.lock
+49 silly lockFile 723b4483-cob-npm-mangos-0-1-2-package-tgz /home/jacob/.npm/mangos/0.1.2/package.tgz
+50 verbose lock /home/jacob/.npm/mangos/0.1.2/package.tgz /home/jacob/.npm/723b4483-cob-npm-mangos-0-1-2-package-tgz.lock
+51 silly lockFile 507ba7bf-04187-0-8518948818091303-package /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+52 silly lockFile 507ba7bf-04187-0-8518948818091303-package /home/jacob/tmp/npm-5546/1361690404187-0.8518948818091303/package
+53 silly lockFile 723b4483-cob-npm-mangos-0-1-2-package-tgz /home/jacob/.npm/mangos/0.1.2/package.tgz
+54 silly lockFile 723b4483-cob-npm-mangos-0-1-2-package-tgz /home/jacob/.npm/mangos/0.1.2/package.tgz
+55 silly lockFile b8d9c13f-e-jacob-npm-mangos-0-1-2-package /home/jacob/.npm/mangos/0.1.2/package
+56 verbose lock /home/jacob/.npm/mangos/0.1.2/package /home/jacob/.npm/b8d9c13f-e-jacob-npm-mangos-0-1-2-package.lock
+57 silly lockFile b8d9c13f-e-jacob-npm-mangos-0-1-2-package /home/jacob/.npm/mangos/0.1.2/package
+58 silly lockFile b8d9c13f-e-jacob-npm-mangos-0-1-2-package /home/jacob/.npm/mangos/0.1.2/package
+59 verbose tar unpack /home/jacob/.npm/mangos/0.1.2/package.tgz
+60 silly lockFile b8d9c13f-e-jacob-npm-mangos-0-1-2-package /home/jacob/.npm/mangos/0.1.2/package
+61 verbose lock /home/jacob/.npm/mangos/0.1.2/package /home/jacob/.npm/b8d9c13f-e-jacob-npm-mangos-0-1-2-package.lock
+62 silly lockFile 723b4483-cob-npm-mangos-0-1-2-package-tgz /home/jacob/.npm/mangos/0.1.2/package.tgz
+63 verbose lock /home/jacob/.npm/mangos/0.1.2/package.tgz /home/jacob/.npm/723b4483-cob-npm-mangos-0-1-2-package-tgz.lock
+64 silly gunzTarPerm modes [ '755', '644' ]
+65 silly gunzTarPerm extractEntry package.json
+66 silly gunzTarPerm extractEntry .npmignore
+67 silly gunzTarPerm extractEntry README.md
+68 silly gunzTarPerm extractEntry Mango.js
+69 verbose read json /home/jacob/.npm/mangos/0.1.2/package/package.json
+70 silly lockFile b8d9c13f-e-jacob-npm-mangos-0-1-2-package /home/jacob/.npm/mangos/0.1.2/package
+71 silly lockFile b8d9c13f-e-jacob-npm-mangos-0-1-2-package /home/jacob/.npm/mangos/0.1.2/package
+72 silly lockFile 723b4483-cob-npm-mangos-0-1-2-package-tgz /home/jacob/.npm/mangos/0.1.2/package.tgz
+73 silly lockFile 723b4483-cob-npm-mangos-0-1-2-package-tgz /home/jacob/.npm/mangos/0.1.2/package.tgz
+74 silly shasum updated bytes 2736
+75 info shasum e2f96ec2cb29d8b39d5b2361a14fd14ccb401008
+75 info shasum /home/jacob/.npm/mangos/0.1.2/package.tgz
+76 verbose from cache /home/jacob/.npm/mangos/0.1.2/package/package.json
+77 verbose chmod /home/jacob/.npm/mangos/0.1.2/package.tgz 644
+78 verbose chown /home/jacob/.npm/mangos/0.1.2/package.tgz [ 0, 0 ]
+79 silly lockFile 3a52ce78- .
+80 silly publish { name: 'mangos',
+80 silly publish   description: 'Mangos.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB\'s Native driver',
+80 silly publish   keywords: [ 'mango', 'mongodb', 'mongo', 'CRUD' ],
+80 silly publish   version: '0.1.2',
+80 silly publish   repository: { type: 'git', url: 'https://github.com/jacoblwe20/mangos.git' },
+80 silly publish   author: { name: 'Jacob Lowe', url: 'https://github.com/jacoblwe20' },
+80 silly publish   main: './Mango.js',
+80 silly publish   dependencies: { mongodb: '1.2.7' },
+80 silly publish   readmeFilename: 'README.md',
+80 silly publish   gitHead: '5cbea82045db5cfcd518eb6a15e9d782d8a8eb23',
+80 silly publish   scripts: { test: '' },
+80 silly publish   license: 'BSD',
+80 silly publish   readme: '## Mangos\n\n#### mango_js is now mangos\n\nMangos.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB\'s Native driver\n\n#### Documentation in the code!\n\n## Install\n\n```shell\nnpm install mangos\n```\nyou can install it locally for development by doing this\n\n```shell\ngit clone https://github.com/jacoblwe20/mango_js.git\ncd ~/your_app\nnpm install ../mango_js\n```\n\nthen in your code\n\n```javascript\n// to include\nvar Mangos = require(\'mangos\');\n//to use\nvar userSet = new Mangos(\'users\', \'localhost\', 27017);\n// or with a mongo uri\nvar locations = new Mangos(\'locations\', \'mongodb://admin:supersecret@cooldbs.io/yourdb\');\n// Dont do this the code is not synchronous\nuserSet.create({name : \'Jacob\'}, function(err, user){\n  // if no error user is created\n  console.log(user._id);\n});\n\nuserSet.read({name : \'Jacob\'},function(err, users){\n  console.log(users); // array of users with Jacob as name\n});\n\nuserSet.update({id : \'50e3bdb52fc1c5d15a000001\', status : \'active\'}, function(err, user){\n  // if no err user is updated\n});\n\nuserSet.delete(\'50e3bdb52fc1c5d15a000001\', function(err, user){\n  // if no error user is deleted\n});\n\n```\n\nNot enough control... well you can still use the native driver\n\n```javascript\nuserSet.db.open()\n// Mongo Db Native Driver Object\nuserSet.db.collectionNames(function(err, names){\n\tconsole.log(names);\n});\nuserSet.db.close()\n```\n\n',
+80 silly publish   _id: 'mangos@0.1.2',
+80 silly publish   dist: { shasum: 'e2f96ec2cb29d8b39d5b2361a14fd14ccb401008' },
+80 silly publish   _from: '.' }
+81 verbose url raw mangos
+82 verbose url resolving [ 'https://registry.npmjs.org/', './mangos' ]
+83 verbose url resolved https://registry.npmjs.org/mangos
+84 info trying registry request attempt 1 at 23:20:16
+85 http PUT https://registry.npmjs.org/mangos
+86 http 409 https://registry.npmjs.org/mangos
+87 verbose url raw mangos
+88 verbose url resolving [ 'https://registry.npmjs.org/', './mangos' ]
+89 verbose url resolved https://registry.npmjs.org/mangos
+90 info trying registry request attempt 1 at 23:20:17
+91 http GET https://registry.npmjs.org/mangos
+92 http 200 https://registry.npmjs.org/mangos
+93 error publish fail Cannot publish over existing version.
+93 error publish fail Update the 'version' field in package.json and try again.
+93 error publish fail
+93 error publish fail If the previous version was published in error, see:
+93 error publish fail     npm help unpublish
+93 error publish fail
+93 error publish fail To automatically increment version numbers, see:
+93 error publish fail     npm help version
+94 error System Linux 3.5.0-25-generic
+95 error command "nodejs" "/usr/bin/npm" "publish"
+96 error cwd /home/jacob/mangos
+97 error node -v v0.8.20
+98 error npm -v 1.2.11
+99 error code EPUBLISHCONFLICT
+100 verbose exit [ 1, true ]
