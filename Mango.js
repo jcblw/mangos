@@ -17,7 +17,7 @@ var Mongo   = require('mongodb'),
 var Mango = function(database, host, port) {
   // Create a database object
   var self = this;
-  this._database = database;
+  this._collection = database;
   if(port){
     this.db = new Db(database, new Server(host, port, {auto_reconnect: true}, {}), {safe:true});
     this.db.open(function(){
@@ -59,23 +59,6 @@ Mango.prototype.error = function(err, callback){
  */
 Mango.prototype.hex = function(collection, str){
   return collection.db.bson_serializer.ObjectID.createFromHexString(str);
-};
-/* @Basic-Utility
- * @Method    getCollection - Get collection
- * @Param     callback      Function  - Function to pass data to
- */
-Mango.prototype.collection = function(callback){
-  if(this.ready){
-    this.db.collection(this._database, function(err, collection){
-      if(err) this.error(err, callback);
-      else callback(null, collection);
-    });
-  }else{
-    var self = this;
-    setTimeout(function(){
-      self.collection(callback); // polling
-    }, 500);
-  }
 };
 /* @Basic-Utility
  * @Method   index - add an index to collection
@@ -131,5 +114,6 @@ Mango.prototype.find = function(filter, callback){
 
 // modules to extend Mangos
 require('./src/crud')(Mango); // pass in object to extend
+require('./src/collection')(Mango); // pass in object to extend
 
 module.exports = Mango;

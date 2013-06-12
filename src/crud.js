@@ -1,4 +1,4 @@
-module.exports = function(Mango){ // import Mango
+module.exports = function(Mango){ // import Mangos
 
   /* @Create
    * @Method  create - Creating new entries
