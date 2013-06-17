@@ -23,6 +23,11 @@ module.exports = function( Mango ){ // import Mangos
 
   Mango.prototype.Collection = function( name, options ){
     this._collection = name;
+    
+    if(options){
+      options = {}
+    }
+
     this.allowOnly = options.allowOnly || [];
     this.privateKeys = options.privateKeys || [];
     this.collectionDefaults = options.defaults || {};
@@ -51,7 +56,7 @@ module.exports = function( Mango ){ // import Mangos
         
         if( Array.isArray( this.allowOnly ) ){
           // grab only allowed keys
-          model = _.pick.apply( this, [model].concat( this.allowOnly ) );
+          model = _.pick.apply( this, [model, "_id"].concat( this.allowOnly ) );
         }
 
         if( typeof this.collectionDefaults === 'object' ){
