@@ -15,8 +15,8 @@
   "author": "Jacob Lowe (https://github.com/jacoblwe20)",
   "main": "./Mango.js",
   "dependencies": {
-    "mongodb": "1.2.7",
-    "underscore" : "1.4.4"
+    "mongodb": "2.2.26",
+    "underscore" : "1.8.3"
   },
   "readmeFilename": "README.md",
   "gitHead": "5cbea82045db5cfcd518eb6a15e9d782d8a8eb23",
