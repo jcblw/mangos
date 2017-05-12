@@ -1,5 +1,7 @@
 ## Mangos
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jcblw/mangos.svg)](https://greenkeeper.io/)
+
 #### mango_js is now mangos
 
 Mangos.js is a simple module to make MongoDB syntax CRUD. It uses and exposes controls straight from MongoDB's Native driver
